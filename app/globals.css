@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #f6ead0;
+  --color-cream: #fff5d7;
+  --color-accent: #e3ad45;
+  --color-accent-soft: #f1c66f;
+  --color-deep: #130f0a;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  background: #0d0a07;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+
+#next-logo{ display:none; }
+
+.hero-bg {
+  background-image: url("/bg/scene-wide.png");
+}
+
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+
+@media (orientation: portrait) {
+  .hero-bg { background-image: url("/bg/scene-tall.png"); }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.vinyl-spin { animation: spin 8s linear infinite; }
+.clock-colon { animation: blink 1s steps(1, end) infinite; }
+.player-enter { animation: floatIn .7s ease-out both; }
+
+.youtube-art iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+  display: block;
+}
+
+/* Keep YouTube controls visible and usable inside the artwork slot. */
+.youtube-art { background: #0b0906; }
+
+.safe-top { top: max(1rem, env(safe-area-inset-top)); }
+.safe-left { left: max(1rem, env(safe-area-inset-left)); }
+.safe-right { right: max(1rem, env(safe-area-inset-right)); }
+.safe-bottom { bottom: max(1rem, env(safe-area-inset-bottom)); }
+
+.seek-hit { height: 24px; display: flex; align-items: center; }
+.seek-rail { height: 3px; }
+.seek-knob { opacity: 0; transition: opacity .16s ease, transform .16s ease; }
+.seek-hit:hover .seek-knob, .seek-hit:focus-within .seek-knob { opacity: 1; }
+
+@media (max-width: 639px) {
+  .seek-knob { opacity: 1; }
+}
