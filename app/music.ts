@@ -46,4 +46,14 @@ export const tracks: Track[] = [
     videoId: "9VNI3s7rUoQ",
     batch: "evening",
   },
+  {
+    id: "track-4",
+    title: "Kali Kali Zulfon Ke",
+    artist: "Ustad Nusrat Fateh Ali Khan",
+    film: "Ustad Nusrat Fateh Ali Khan",
+    year: 1993,
+    duration: 0,
+    videoId: "h_K7-3WIehw",
+    batch: "evening",
+  },
 ];
