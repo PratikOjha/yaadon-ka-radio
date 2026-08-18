@@ -36,4 +36,14 @@ export const tracks: Track[] = [
     videoId: "C8WCeSEj_kE",
     batch: "morning",
   },
+  {
+    id: "track-3",
+    title: "Kya Leke Aaya Jagat Mai",
+    artist: "Neeraj Arya",
+    film: "Neeraj Arya's Kabir Cafe",
+    year: 2020,
+    duration: 0,
+    videoId: "9VNI3s7rUoQ",
+    batch: "evening",
+  },
 ];
